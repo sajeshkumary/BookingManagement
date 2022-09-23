@@ -17,6 +17,7 @@ namespace ProductManagement.Controllers
             _context = db;
         }
 
+        [CustomAuthFilter]
         [Authorize()]
         [HttpPost]
         public async Task<ActionResult<Appservicerequest>> Add(Appservicerequest u)
@@ -26,6 +27,7 @@ namespace ProductManagement.Controllers
             return await bookingRepo.AddNewRequest(u);
         }
 
+        [CustomAuthFilter]
         [Authorize()]
         [HttpPut("{id}")]
         public async Task<ActionResult<Appservicerequest>> UpdateRequest(int id, Appservicerequest p)
@@ -42,7 +44,7 @@ namespace ProductManagement.Controllers
             }
         }
 
-
+        [CustomAuthFilter]
         [Authorize()]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Appservicerequest>>> GetAll()
@@ -58,6 +60,7 @@ namespace ProductManagement.Controllers
             }
         }
 
+        [CustomAuthFilter]
         [Authorize()]
         [HttpDelete("{id}")]
         public async Task<ActionResult> DeleteRequest(int id)
@@ -74,6 +77,7 @@ namespace ProductManagement.Controllers
             }
         }
 
+        [CustomAuthFilter]
         [Authorize()]
         [HttpGet("{id}")]
         public async Task<ActionResult<Appservicerequest>> Get(int id)
@@ -90,6 +94,7 @@ namespace ProductManagement.Controllers
             }
         }
 
+        [CustomAuthFilter]
         [Authorize()]
         [HttpGet("ByUserId/{uid}")]
         public async Task<ActionResult<List<Appservicerequest>>> GetByUserId(int uid)
@@ -106,6 +111,7 @@ namespace ProductManagement.Controllers
             }
         }
 
+        [CustomAuthFilter]
         [Authorize()]
         [HttpGet("ByStatus/{status}")]
         public async Task<ActionResult<List<Appservicerequest>>> GetByStatus(string status)
@@ -122,6 +128,7 @@ namespace ProductManagement.Controllers
             }
         }
 
+        [CustomAuthFilter]
         [Authorize()]
         [HttpGet("ByUserByStatus/{id}/{status}")]
         public async Task<ActionResult<List<Appservicerequest>>> GetByUidAndStatus(int id,string status)
@@ -138,6 +145,7 @@ namespace ProductManagement.Controllers
             }
         }
 
+        [CustomAuthFilter]
         [Authorize()]
         [HttpPost("report")]
         public async Task<ActionResult<Appservicerequestreport>> AddReport(Appservicerequestreport u)
@@ -147,6 +155,7 @@ namespace ProductManagement.Controllers
             return await bookingRepo.AddNewReport(u);
         }
 
+        [CustomAuthFilter]
         [Authorize()]
         [HttpGet("report")]
         public async Task<ActionResult<IEnumerable<Appservicerequestreport>>> GetAllReports()
@@ -162,6 +171,7 @@ namespace ProductManagement.Controllers
             }
         }
 
+        [CustomAuthFilter]
         [Authorize()]
         [HttpGet("ReportById/{id}")]
         public async Task<ActionResult<Appservicerequestreport>> GetReportByReportId(int id)
@@ -178,6 +188,7 @@ namespace ProductManagement.Controllers
             }
         }
 
+        [CustomAuthFilter]
         [Authorize()]
         [HttpGet("ReportByUserId/{uid}")]
         public async Task<ActionResult<List<Appservicerequestreport>>> GetReportByUserId(int uid)
@@ -194,6 +205,7 @@ namespace ProductManagement.Controllers
             }
         }
 
+        [CustomAuthFilter]
         [Authorize()]
         [HttpGet("ReportByRequestId/{rid}")]
         public async Task<ActionResult<List<Appservicerequestreport>>> GetReportByRequestId(int rid)

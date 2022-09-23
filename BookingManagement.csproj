@@ -7,9 +7,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.9" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.9" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.9" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="ServiceBookingLibrary">
+      <HintPath>..\ServiceBookingLibrary\bin\Debug\net6.0\ServiceBookingLibrary.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>
